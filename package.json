@@ -1,6 +1,6 @@
 {
     "name": "kratos-express-middleware",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "Quick auth middleware for kratos",
     "exports": {
         ".": {
