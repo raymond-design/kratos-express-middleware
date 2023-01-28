@@ -1,5 +1,5 @@
 {
-    "name": "kratos-express-middlware",
+    "name": "kratos-express-middleware",
     "version": "0.0.1",
     "description": "Quick auth middleware for kratos",
     "exports": {
@@ -45,7 +45,9 @@
         "javascript",
         "typescript",
         "kratos",
-        "middleware"
+        "middleware",
+        "ory",
+        "auth"
     ],
     "author": "Raymond Yan",
     "license": "MIT",
