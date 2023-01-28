@@ -1,0 +1,67 @@
+{
+    "name": "kratos-express-middlware",
+    "version": "0.0.1",
+    "description": "Quick auth middleware for kratos",
+    "exports": {
+        ".": {
+            "import": {
+                "types": "./lib/esm/types/index.d.ts",
+                "default": "./lib/esm/index.mjs"
+            },
+            "require": {
+                "types": "./lib/cjs/types/index.d.ts",
+                "default": "./lib/cjs/index.js"
+            }
+        }
+    },
+    "types": "./lib/cjs/types/index.d.ts",
+    "main": "./lib/cjs/index.js",
+    "files": [
+        "lib/**/*"
+    ],
+    "scripts": {
+        "clean": "rm -rf ./lib",
+        "build": "npm run clean && npm run build:esm && npm run build:cjs",
+        "build:esm": "tsc -p ./configs/tsconfig.esm.json && mv lib/esm/index.js lib/esm/index.mjs",
+        "build:cjs": "tsc -p ./configs/tsconfig.cjs.json",
+        "test": "mocha",
+        "semantic-release": "semantic-release",
+        "prepack": "npm run build"
+    },
+    "release": {
+        "branches": [
+            "main"
+        ]
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/raymond-design/kratos-express-middleware.git"
+    },
+    "keywords": [
+        "npm",
+        "javascript",
+        "typescript",
+        "kratos",
+        "middleware"
+    ],
+    "author": "Raymond Yan",
+    "license": "MIT",
+    "devDependencies": {
+        "@types/chai": "^4.3.3",
+        "@types/express": "^4.17.16",
+        "@types/mocha": "^9.1.1",
+        "chai": "^4.3.6",
+        "mocha": "^10.0.0",
+        "semantic-release": "^19.0.3",
+        "ts-node": "^10.9.1",
+        "typescript": "^4.7.4"
+    },
+    "dependencies": {
+        "@ory/client": "^1.1.7",
+        "dotenv": "^16.0.3",
+        "express": "^4.18.2"
+    }
+}
